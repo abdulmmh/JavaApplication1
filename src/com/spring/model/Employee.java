@@ -61,10 +61,10 @@ public class Employee {
     public void showEmployee(){
         System.out.println("ID: " + id);
         System.out.println("Name: " + name);
-//        for (Address addr1 : addrs) {
-//            System.out.println(addr1);
-//        }
         System.out.println( addr);
+        for (Address addr1 : addrs) {
+            System.out.println(addr1);
+        }
     }
 
     public void setAddr(Address addr) {
