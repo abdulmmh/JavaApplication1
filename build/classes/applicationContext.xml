@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+">
+
+     <bean id="e" class="com.spring.model.Employee">
+        <property name="id">
+            <value type="int">10</value>                             
+        </property>
+        <property name="name">
+            <value type="string">Mahadi</value>                             
+        </property>
+        <property name="addr" ref="addr"/>
+<!--        <property>
+            <list>
+                <ref bean="addr"/>
+            </list>   
+        </property>-->
+    </bean>
+    
+    <bean id="e1" class="com.spring.model.Employee">
+        <constructor-arg name="id" value="11"/>          
+        <constructor-arg  name="name" value="Abdullah"/> 
+        <constructor-arg  name="addr" ref="addr1"/> 
+<!--        <constructor-arg>
+            <list>
+                <ref bean="addr1"/>
+            </list>   
+        </constructor-arg>-->
+    </bean>
+    
+    <bean id="e2" class="com.spring.model.Employee">
+        <constructor-arg name="id" value="12"/>          
+        <constructor-arg  name="name" value="Tasrif"/> 
+        <constructor-arg  name="addr" ref="addr2"/> 
+<!--        <constructor-arg>
+            <list>
+                <ref bean="addr2"/>
+            </list>   
+        </constructor-arg>-->
+    </bean>
+    
+    <bean id="addr" class="com.spring.model.Address">
+        <constructor-arg value="Tehran"/>
+        <constructor-arg value="Iran"/>
+    </bean>
+    
+    <bean id="addr1" class="com.spring.model.Address">
+        <constructor-arg value="Tel Aviv"/>
+        <constructor-arg value="Israel"/>
+    </bean>
+    
+    <bean id="addr2" class="com.spring.model.Address">
+        <constructor-arg value="Washington D.C"/>
+        <constructor-arg value="America"/>
+    </bean>
+</beans>
